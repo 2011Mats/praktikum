@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8"></meta>
+    <title>Taschenrechner</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playwrite+NZ+Basic:wght@100..400&display=swap');
+        body:not(#a){
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; 
+            background-color: #f0f0f0;
+            position: relative; 
+            padding-top: 350px;  
+        }
+        .row {
+            display: flex;
+            justify-content: center;
+        }
+        .calculator {
+            transform: scale(2.5);
+        }
+        button:not(#a){
+            width: 45px;
+            height: 45px;
+            font-size: 18px;
+            margin: 5px;
+            cursor: pointer;
+            transition: background-color 0.2s, transform 0.2s;
+        }
+        button:hover{
+            background-color: rgb(33, 179, 184);
+            scale: 112.5%;
+        }
+        #display {
+            width: 95px;
+            height: 40px;
+            font-size: 18px;
+            margin: 5px;
+        }
+        h1 {
+            position: absolute;
+            top: -15px;         
+            left: 35%;
+            font-size: 4rem;
+            font-family: "Playwrite NZ Basic", cursive;;
+        }
+        #a{
+            position: fixed;
+            top: 80%;         
+            left: 90%;
+            font-size: 4rem;
+            scale: 47.5%; 
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Taschenrechner</h1>
+    <button id="a" onclick="location.href='website1.html'" >
+        <img src="weiter.png"></button></img>
+    </button>
+    <div class="calculator">   
+        <div class="row">
+            <textarea id="display" readonly></textarea>
+            <button onclick="deleteAll()">AC</button>
+            <button onclick="deleteLast()">C</button>
+        </div>   
+
+        <div class="row">
+            <button onclick="appendValue('1')">1</button>
+            <button onclick="appendValue('2')">2</button>
+            <button onclick="appendValue('3')">3</button>
+            <button onclick="appendValue('÷')">÷</button>
+        </div>
+        <div class="row">
+            <button onclick="appendValue('4')">4</button>
+            <button onclick="appendValue('5')">5</button>
+            <button onclick="appendValue('6')">6</button>
+            <button onclick="appendValue('x')">x</button>
+        </div>
+        <div class="row">
+            <button onclick="appendValue('7')">7</button>
+            <button onclick="appendValue('8')">8</button>
+            <button onclick="appendValue('9')">9</button>
+            <button onclick="appendValue('-')">-</button>
+        </div>
+        <div class="row">
+            <button onclick="appendValue('0')">0</button>
+            <button onclick="appendValue('.')">.</button>
+            <button onclick="calculate()">=</button>
+            <button onclick="appendValue('+')">+</button>
+        </div>
+    </div>
+    
+    <script>
+    const display = document.getElementById("display");
+
+    function appendValue(value) {
+        display.value += value;
+    }
+
+    function deleteAll() {
+        display.value = "";
+    }
+
+    function calculate() {
+        try {
+            let x = display.value
+                .replace(/x/g, "*")
+                .replace(/÷/g, "/");
+            display.value = eval(x);
+        } catch {
+            display.value = "Fehler";
+        }
+    }
+    function deleteLast(){
+        display.value = display.value.slice(0, -1);
+
+
+    }
+</script>
+</body>
+</html>
