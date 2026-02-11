@@ -1,0 +1,149 @@
+<html lang="de">
+        
+    <head>
+    <h1 id="head1">Nike</h1>
+    <style>
+    #head1{
+        text-align: center;
+        font-size: 120;
+        color: black;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        margin: 2vw;
+        
+    }
+    #logo{
+        margin-left: 42.5vw;
+        margin-top: -2vw;
+        transition: all 0.5s ease-in-out;
+       
+    }
+    #logo.maximize{
+        transform: rotate(360deg) scale(3);   
+    }
+    #UmsatzTable{
+        margin-left: 10vw;
+        margin-top: -10vw;
+        scale: 125%;
+        font-size: 1.2vw;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        border: 1px ;
+       
+        
+    }
+    table, th, td {
+        border: 1px solid black;
+        border-radius: 10px;
+    } 
+    tr:nth-child(odd){
+        background-color: rgba(84, 207, 191, 0.74);
+    }
+    tr:nth-child(even){
+        background-color: rgba(0, 0, 0, 0.425);
+    }
+    #head2{
+        text-align: right;
+        font-size: 40;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        margin: 2vw;
+        margin-top: -22vw;
+        
+    }
+    body {
+        background-color: rgb(255, 255, 255);
+    }
+    #infos{
+        margin-left: 60vw;
+        font-size: 36;
+        font-family: Georgia, 'Times New Roman', Times, serif; 
+    }  
+    #button:not(#a){
+        margin-left: 42.5vw;
+        margin-top: -28.5vw;
+        scale: 40%;
+        }
+    #a{
+        position: fixed;
+        top: 80%;         
+        left: 89.5%;
+        font-size: 4rem;
+        scale: 50%;
+        }
+    #a2{
+        position: fixed;
+        top: 80%;         
+        left: 0.5%;
+        font-size: 4rem;
+        scale: 50%;
+        transform: rotate(180deg);
+        }
+    </style>
+    </head>
+    <script>
+    </script>
+    
+    <body>
+        <button id="a" onclick="location.href='website3.html'">
+             <img src="weiter.png"></button></img>
+        </button>
+        <button id="a2" onclick="location.href='website2.html'">
+             <img src="weiter.png"></button></img>
+        </button>
+        <a href="https://www.nike.com/de/">
+            <img id="logo" src ="logo.png"></img>
+        </a>
+       
+       <table style="width: 12%;" id="UmsatzTable">
+            <tr><th>Jahr</th><th>Umsatz</th></tr>
+            <tr><td>2015</td><td>30.60 Mrd.$</td></tr>
+            <tr><td>2016</td><td>32.38 Mrd.$</td></tr>
+            <tr><td>2015</td><td>34.35 Mrd.$</td></tr>
+            <tr><td>2018</td><td>36.40 Mrd.$</td></tr>
+            <tr><td>2019</td><td>39.12 Mrd.$</td></tr>
+            <tr><td>2020</td><td>37.40 Mrd.$</td></tr>
+            <tr><td>2021</td><td>44.54 Mrd.$</td></tr>
+            <tr><td>2022</td><td>46.71 Mrd.$</td></tr>
+            <tr><td>2023</td><td>51,22 Mrd.$</td></tr>
+            <tr><td>2024</td><td>51,36 Mrd.$</td></tr>
+            <tr><td>2025</td><td>46.31 Mrd.$</td></tr>
+        </table> 
+
+        <h2 id="head2">Allgemeine Informationen</h2>
+        <div>
+            <ul id="infos">
+                <li>Gegründet 1964 in Oregon von Phil Knight und Bill Bowerman  </li>
+                <li> Ursprünglich Blue Ribbon Sports, seit 1971 Nike  </li>
+                <li> Hauptsitz Beaverton, Oregon, USA   </li>
+                <li> Branche Sportbekleidung, Sportschuhe, Sportausrüstung </li>
+                <li>Bekannt für Swoosh-Logo und Slogan „Just Do It“  </li>
+                <li>Produkte für viele Sportarten</li>
+                <li>Zusammenarbeit mit berühmten Sportler:innen und Teams  </li>
+                <li>Einer der größten Sportartikelhersteller weltweit </li> 
+            </ul>
+        </div> 
+        <div>
+            <button id="button" onclick="ausfuehren()">
+                <img src="button.png">
+            </button>
+        </div>
+    </body>
+
+<script>
+    function ausfuehren() {
+        const img = document.getElementById("logo");
+
+        if(!img.classList.contains("maximize")){
+            img.classList.add("maximize");  
+            setTimeout(()=>img.classList.remove("maximize"),1000);
+        }
+        
+
+
+        
+        }
+</script>
+
+
+
+
+
+</html>
